@@ -35,20 +35,21 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
   const change24h = 2.34
 
   return (
-    <div className="bg-[#252526] border border-[#3c3c3c] text-[#cccccc]">
+    <div className="bg-[#252526] border border-[#3c3c3c] text-[#cccccc]" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>
       {/* Header - VS Code tab style */}
       <div className="bg-[#2d2d30] border-b border-[#3c3c3c] px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Activity className="h-4 w-4 text-[#007acc]" />
-            <span className="font-medium text-sm">Trade Panel</span>
+            <span className="font-medium text-sm" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>Trade Panel</span>
           </div>
           <div className="flex items-center gap-3">
-            <div className="px-2 py-1 bg-[#1e1e1e] border border-[#3c3c3c] text-xs font-mono">{symbol}</div>
+            <div className="px-2 py-1 bg-[#1e1e1e] border border-[#3c3c3c] text-xs" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>{symbol}</div>
             <div className="text-right">
-              <div className="text-sm font-mono text-[#cccccc]">${marketPrice.toLocaleString()}</div>
+              <div className="text-sm text-[#cccccc]" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>${marketPrice.toLocaleString()}</div>
               <div
-                className={`text-xs flex items-center gap-1 font-mono ${change24h >= 0 ? "text-[#4ec9b0]" : "text-[#f44747]"}`}
+                className={`text-xs flex items-center gap-1 ${change24h >= 0 ? "text-[#4ec9b0]" : "text-[#f44747]"}`}
+                style={{ fontFamily: '"JetBrains Mono", sans-serif' }}
               >
                 {change24h >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
                 {Math.abs(change24h)}%
@@ -61,9 +62,9 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
       <div className="p-4 space-y-4">
         {/* Symbol Selection */}
         <div className="space-y-2">
-          <Label className="text-xs font-medium text-[#cccccc] uppercase tracking-wide">Symbol</Label>
+          <Label className="text-xs font-medium text-[#cccccc] uppercase tracking-wide" style={{ fontFamily: '"JetBrains Mono", sans-serif', color: '#474747' }}>Symbol</Label>
           <Select value={symbol} onValueChange={setSymbol}>
-            <SelectTrigger className="bg-[#1e1e1e] border-[#3c3c3c] text-[#cccccc] font-mono h-8">
+            <SelectTrigger className="bg-[#1e1e1e] border-[#3c3c3c] text-[#cccccc] h-8" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-[#252526] border-[#3c3c3c]">
@@ -91,11 +92,12 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
           <div className="flex border-b border-[#3c3c3c]">
             <button
               onClick={() => setSide("buy")}
-              className={`flex-1 px-3 py-2 text-sm font-medium border-b-2 transition-colors ${
+              className={`flex-1 px-3 py-2 font-medium border-b-2 transition-colors ${
                 side === "buy"
                   ? "border-[#4ec9b0] text-[#4ec9b0] bg-[#1e1e1e]"
                   : "border-transparent text-[#858585] hover:text-[#cccccc]"
               }`}
+              style={{ fontFamily: '"JetBrains Mono", sans-serif', fontSize: '12px', letterSpacing: '0.02em' }}
             >
               BUY
             </button>
@@ -106,6 +108,7 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
                   ? "border-[#f44747] text-[#f44747] bg-[#1e1e1e]"
                   : "border-transparent text-[#858585] hover:text-[#cccccc]"
               }`}
+              style={{ fontFamily: '"JetBrains Mono", sans-serif' }}
             >
               SELL
             </button>
@@ -114,9 +117,9 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
           <div className="space-y-4">
             {/* Order Type */}
             <div className="space-y-2">
-              <Label className="text-xs font-medium text-[#cccccc] uppercase tracking-wide">Order Type</Label>
+              <Label className="text-xs font-medium text-[#cccccc] uppercase tracking-wide" style={{ fontFamily: '"JetBrains Mono", sans-serif', color: '#303030' }}>Order Type</Label>
               <Select value={orderType} onValueChange={setOrderType}>
-                <SelectTrigger className="bg-[#1e1e1e] border-[#3c3c3c] text-[#cccccc] h-8">
+                <SelectTrigger className="bg-[#1e1e1e] border-[#3c3c3c] text-[#cccccc] h-8" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-[#252526] border-[#3c3c3c]">
@@ -150,17 +153,18 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
             {/* Amount Input */}
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <Label className="text-xs font-medium text-[#cccccc] uppercase tracking-wide">
+                <Label className="text-xs font-medium text-[#cccccc] uppercase tracking-wide" style={{ fontFamily: '"JetBrains Mono", sans-serif', color: '#323232' }}>
                   Amount ({symbol.split("/")[0]})
                 </Label>
-                <span className="text-xs text-[#858585] font-mono">Balance: 0.000000</span>
+                <span className="text-xs text-[#858585]" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>Balance: 0.000000</span>
               </div>
               <Input
                 type="number"
                 placeholder="0.00"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="bg-[#1e1e1e] border-[#3c3c3c] text-[#cccccc] font-mono text-right h-8 focus:border-[#007acc]"
+                className="bg-[#1e1e1e] border-[#3c3c3c] text-[#cccccc] text-right h-8 focus:border-[#007acc]"
+                style={{ fontFamily: '"JetBrains Mono", sans-serif' }}
               />
 
               {/* Quick Amount Buttons */}
@@ -168,7 +172,8 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
                 {["25%", "50%", "75%", "100%"].map((percentage) => (
                   <button
                     key={percentage}
-                    className="px-2 py-1 text-xs font-mono bg-[#1e1e1e] border border-[#3c3c3c] text-[#858585] hover:text-[#cccccc] hover:border-[#007acc] transition-colors"
+                    className="px-2 py-1 text-xs bg-[#1e1e1e] border border-[#3c3c3c] text-[#858585] hover:text-[#cccccc] hover:border-[#007acc] transition-colors"
+                    style={{ fontFamily: '"JetBrains Mono", sans-serif' }}
                     onClick={() => {
                       const mockBalance = 1.5
                       const percent = Number.parseInt(percentage) / 100
@@ -183,8 +188,8 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
 
             {/* Total */}
             <div className="space-y-2">
-              <Label className="text-xs font-medium text-[#cccccc] uppercase tracking-wide">Total (USDT)</Label>
-              <div className="p-2 bg-[#1e1e1e] border border-[#3c3c3c] text-right font-mono text-[#cccccc] h-8 flex items-center justify-end">
+              <Label className="text-xs font-medium text-[#cccccc] uppercase tracking-wide" style={{ fontFamily: '"JetBrains Mono", sans-serif', color: '#323232' }}>Total (USDT)</Label>
+              <div className="p-2 bg-[#1e1e1e] border border-[#3c3c3c] text-right text-[#cccccc] h-8 flex items-center justify-end" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>
                 {amount && (orderType === "market" ? marketPrice : price)
                   ? (
                       Number.parseFloat(amount || "0") *
@@ -203,8 +208,9 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
                   ? "bg-[#4ec9b0] hover:bg-[#4ec9b0]/80 text-[#1e1e1e]"
                   : "bg-[#f44747] hover:bg-[#f44747]/80 text-white"
               }`}
+              style={{ fontFamily: '"JetBrains Mono", sans-serif' }}
             >
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center gap-2" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>
                 <DollarSign className="h-4 w-4" />
                 {side === "buy" ? "BUY" : "SELL"} {symbol.split("/")[0]}
               </div>
@@ -214,7 +220,7 @@ export function TradeInputPanel({ onSubmitTrade }: TradeInputPanelProps) {
       </div>
 
       {/* Status Bar */}
-      <div className="bg-[#007acc] px-4 py-1 text-xs font-mono text-white flex items-center justify-between">
+      <div className="bg-[#007acc] px-4 py-1 text-xs text-white flex items-center justify-between" style={{ fontFamily: '"JetBrains Mono", sans-serif' }}>
         <span>Ready</span>
         <span>{new Date().toLocaleTimeString()}</span>
       </div>

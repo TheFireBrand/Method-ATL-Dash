@@ -11,8 +11,8 @@ export default function TradeDashboard() {
     <div className="min-h-screen bg-[#1e1e1e] text-[#cccccc] p-4">
       <div className="max-w-7xl mx-auto">
         <div className="mb-6 border-b border-[#3c3c3c] pb-4">
-          <h1 className="text-2xl font-semibold text-[#cccccc]">Trading Dashboard</h1>
-          <p className="text-[#858585] text-sm">Execute trades with precision</p>
+          <h1 className="text-2xl font-semibold text-[#cccccc]"></h1>
+          <p className="text-[#858585] text-sm"></p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
